@@ -10,7 +10,6 @@ def get_html(url):
     return soup
 
 
-
 def crawl_article_rule_1(url):
     soup = get_html(url)
     article_container = soup.find('div', id='c')
@@ -32,10 +31,50 @@ def crawl_article_rule_1(url):
 
 
 def crawl_article_rule_2(url):
+    # Art_left
+    soup = get_html(url)
+    article_container = soup.find('div', class_='Art_left')
+    title = article_container.find('td', class_='title').text.strip()
+    content = []
+    for p in article_container.find('div', class_='view').find_all('p'):
+        if p.find('img'):
+            img_src = urljoin(url, p.find('img').attrs['src'])
+            # img_src = '/'.join(url.split('/')[:-1]) + '/' + p.find('img').attrs['src'].split('./')[-1]
+            # content.append({'img': img_src})
+            content.append('<img src="{}">'.format(img_src))
+        else:
+            text = p.text.strip()
+            if text:
+                # content.append({'text': text})
+                content.append('<p>{}</p>'.format(text))
+    content = '\n'.join(content)
+    print(title, content)
+
+
+def crawl_article_rule_3(url):
+    # body_container
+    soup = get_html(url)
+    article_container = soup.find('div', class_='body_container')
+    title = article_container.find('div', class_='title').text.strip()
+    content = []
+    for p in article_container.find('div', class_='view').find_all('p'):
+        if p.find('img'):
+            img_src = urljoin(url, p.find('img').attrs['src'])
+            # img_src = '/'.join(url.split('/')[:-1]) + '/' + p.find('img').attrs['src'].split('./')[-1]
+            # content.append({'img': img_src})
+            content.append('<img src="{}">'.format(img_src))
+        else:
+            text = p.text.strip()
+            if text:
+                # content.append({'text': text})
+                content.append('<p>{}</p>'.format(text))
+    content = '\n'.join(content)
+    print(title, content)
 
 
 
 if __name__ == "__main__":
     guizhou_url_example = 'http://rst.guizhou.gov.cn/gzdt/xwdt/202001/t20200116_43328705.html'
     guiyang_url_example = 'http://rsj.guiyang.gov.cn/zxzx/zxzxgzdt/zxzxgzdtyw/202001/t20200117_43529798.html'
-    crawl_article_rule_1(guiyang_url_example)
+    liupanshui_url_example = 'http://hrss.gzlps.gov.cn/gzdt_42000/gzdt/202001/t20200114_43050220.html'
+    crawl_article_rule_3(liupanshui_url_example)
