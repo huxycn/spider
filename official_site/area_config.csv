@@ -1,4 +1,4 @@
-crawl_type,area_code,area_name,area_key,publish_organization,index_url,
+crawl_type,area_code,area_name,area_key,publish_organization,start_index_urls,
 1,520000,贵州省,guizhou,贵州人力资源社会保障网,http://rst.guizhou.gov.cn/gzdt/xwdt/index.html,
 -1,520100,贵阳市,guiyang,贵阳人力资源和社会保障网,http://rsj.guiyang.gov.cn/zxzx/zxzxgzdt/zxzxgzdtyw/index.html$$http://rsj.guiyang.gov.cn/dwgk4036/dwgk4036dwgknr/dwgk4036dwgknrgzdt/index.html,
 -1,520200,六盘水市,liupanshui,贵州人力资源社会保障网,http://hrss.gzlps.gov.cn/gzdt_42000/gzdt/index.html,

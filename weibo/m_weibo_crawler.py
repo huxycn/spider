@@ -1,3 +1,5 @@
+import os
+import sys
 import re
 import time
 import json
@@ -5,10 +7,12 @@ import random
 import logging
 import requests
 from datetime import datetime, timedelta
-from weibo import spider_config
 from bs4 import BeautifulSoup, element
-from utils.article import Article
 from json.decoder import JSONDecodeError
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from utils.article import Article
+from weibo import spider_config
 
 logging.basicConfig(level=logging.INFO)
 

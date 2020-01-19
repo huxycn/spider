@@ -39,9 +39,12 @@ def get_article(url, container_tag, container_attr, title_rule):
     article_container = soup.find(container_tag, container_attr)
     title = get_title(article_container, title_rule)
     content = get_content(article_container, url)
-    logging.warning('== Get Article {}'.format('='*50))
-    logging.warning('   Title       {}'.format(title))
-    logging.warning('   Content     {}...'.format(content[:50]))
+    print('=' * 100)
+    logging.warning('  Get Article: {}'.format(url))
+    logging.warning('  Title      : {}'.format(title))
+    logging.warning('  Content    : {}...'.format(content[:50]))
+    print('=' * 100)
+    print()
     return title, content
 
 
@@ -102,8 +105,8 @@ if __name__ == "__main__":
     tongren_url_example = 'http://rsj.trs.gov.cn/ztzl/bwcxljsm/202001/t20200117_43540986.html'
     get_tongren_article(tongren_url_example)
 
-    bijie_url_example = 'http://rsj.bijie.gov.cn/gzdt/202001/t20200117_43564395.html'
-    get_bijie_article(bijie_url_example)
+    # bijie_url_example = 'http://rsj.bijie.gov.cn/gzdt/202001/t20200117_43564395.html'
+    # get_bijie_article(bijie_url_example)
 
     qiandongnan_url_example = 'http://rsj.qdn.gov.cn/gzdt/xwdt/202001/t20200110_42351995.html'
     get_qiandongnan_article(qiandongnan_url_example)
