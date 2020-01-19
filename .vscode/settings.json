@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/huxiaoyang/Documents/Software/miniconda3/envs/spider/bin/python",
+    "python.pythonPath": "/home/dcb/miniconda3/envs/spider/bin/python",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": ["--max-line-length=128"],
