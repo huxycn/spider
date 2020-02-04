@@ -46,6 +46,8 @@ class Article(object):
         return json.dumps(self.entity)
 
     def push_to_db(self, db_name='table', coll_name='spider_article'):
+        from pprint import pprint
+        pprint(self.entity)
         coll = connect_db(db_name, coll_name)
         coll.insert_one(self.entity)
 

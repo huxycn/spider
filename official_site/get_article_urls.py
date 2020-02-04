@@ -42,7 +42,7 @@ def get_article_urls(start_index_url, container_tag, container_attr, item_list_t
                 up_to_date = True
                 break
             else:
-                urls.append((url, publish_date_rule))
+                urls.append((url, publish_date))
         page += 1
 
     print('=' * 100)

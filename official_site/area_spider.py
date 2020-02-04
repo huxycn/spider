@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from urllib.parse import urljoin
 
-
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+root = os.path.join(os.path.dirname(__file__), '..')
+sys.path.append(root)
 import get_article_urls
 import get_article
 from utils.article import Article
@@ -72,7 +72,7 @@ class AreaSpider(object):
 
 if __name__ == "__main__":
     area_config_list = []
-    with open('/home/dcb/PycharmProjects/spider/official_site/area_config.csv', newline='') as csvfile:
+    with open(os.path.join(root, 'official_site/area_config.csv'), newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             area_config_list.append(row)
